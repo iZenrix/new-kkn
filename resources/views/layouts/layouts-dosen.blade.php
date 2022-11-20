@@ -60,6 +60,12 @@
                     <li>
                         <a href="f">Contact</a>
                     </li>
+                    <li>
+                        <a href="{{route('logout')}}"  onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> {{ __('Logout') }}</a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+                    </li>
                 </ul>
 
                 <div class="footer">

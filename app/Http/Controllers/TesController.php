@@ -9,4 +9,8 @@ class TesController extends Controller
     public function index(){
         return view('layouts.layouts');
     }
+
+    public function HalamanLogin(){
+        return view('login.login');
+    }
 }

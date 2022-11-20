@@ -20,7 +20,7 @@
     }
 
     #sidebar {
-        background: brown;
+        background: navy;
     }
 </style>
 
@@ -28,7 +28,7 @@
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
             <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-danger">
+                <button type="button" id="sidebarCollapse" class="btn btn-light" style="background-color:navy; color:antiquewhite">
                     <i class="fa fa-bars"></i>
                     <span class="sr-only">Toggle Menu</span>
                 </button>
@@ -37,26 +37,16 @@
                 <h1><a href="index.html" class="logo">KKN KUY</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="{{route('dashboardMahasiswa')}}">Dashboard</a>
+                        <a href="dashboardadmin">Dashboard</a>
                     </li>
                     <li>
-                        <a href="{{route('uploadMahasiswa')}}">Pengajuan KKN</a>
+                        <a href="datauser">Data User</a>
                     </li>
                     <li>
-                        <a href="{{route('pengantarMahasiswa')}}">Pengantar Dosen</a>
+                        <a href="datadosen">Data Dosen</a>
                     </li>
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Laporan Mingguan</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="{{route('laporListMahasiswa')}}">List</a>
-                            </li>
-                            <li>
-                                <a href="{{route('laporFormMahasiswa')}}">Form</a>
-                            </li>
-                        </ul>
-                    </li>
+                        <a href="{{route('datamahasiswa')}}">Data Mahasiswa</a>
                     <li>
                         <a href="u">Contact</a>
                     </li>
