@@ -40,7 +40,7 @@
                         <a href="{{route('dashboardMahasiswa')}}">Dashboard</a>
                     </li>
                     <li>
-                        <a href="{{route('uploadMahasiswa')}}">Pengajuan KKN</a>
+                        <a href="{{route('listPengajuan')}}">Pengajuan KKN</a>
                     </li>
                     <li>
                         <a href="{{route('pengantarMahasiswa')}}">Pengantar Dosen</a>
@@ -56,9 +56,6 @@
                                 <a href="{{route('laporFormMahasiswa')}}">Form</a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="u">Contact</a>
                     </li>
                     <li>
                         <a href="{{route('logout')}}"  onclick="event.preventDefault();

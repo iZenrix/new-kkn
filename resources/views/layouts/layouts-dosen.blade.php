@@ -34,31 +34,26 @@
                 </button>
             </div>
             <div class="p-4">
-                <h1><a href="index.html" class="logo">KKN KUY</a></h1>
+                <h1><a href="/dashboarddosen" class="logo">KKN KUY</a></h1>
+                <h2><a href="/dashboarddosen" class="logo">DOSEN</a></h2>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="a">Dashboard</a>
+                        <a href="dashboarddosen">Dashboard</a>
                     </li>
                     <li>
-                        <a href="b">Pengajuan KKN</a>
+                        <a href="listpengajuankkn">Pengajuan KKN</a>
                     </li>
                     <li>
-                        <a href="c">Pengantar Dosen</a>
+                        <a href="pengantardosen">Pengantar Dosen</a>
                     </li>
                     <li>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
                             class="dropdown-toggle">Laporan Mingguan</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="d">List</a>
-                            </li>
-                            <li>
-                                <a href="e">Form</a>
+                                <a href="laporanList">List</a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="f">Contact</a>
                     </li>
                     <li>
                         <a href="{{route('logout')}}"  onclick="event.preventDefault();
