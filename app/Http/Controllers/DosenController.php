@@ -17,7 +17,7 @@ class DosenController extends Controller
         return view('dosen.pengantar');
     }
     public function laporanList(){
-        return view('dosen.pengantar.list');
+        return view('dosen.laporan.list');
     }
     public function laporanform(){
         return view('dosen.laporan.form');
