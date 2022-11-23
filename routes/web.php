@@ -7,6 +7,8 @@ use App\Http\Controllers\RegisController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PengajuanController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,7 +36,10 @@ Route::get('/tambahdosen', [AdminController::class, 'tambahdosen']);
 
 Route::get('/tes', [TesController::class, 'index'])->name('index')->middleware(['auth', 'role:admin', 'status:1']);
 Route::get('/dashboardmahasiswa', [MahasiswaController::class, 'dashboard'])->name('dashboardMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
-Route::get('/uploadmahasiswa', [MahasiswaController::class, 'upload'])->name('uploadMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
+
+Route::get('/addpengajuan', [MahasiswaController::class, 'upload'])->name('uploadMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
+Route::post('addpengajuan/action', [PengajuanController::class, 'store'])->name('pengajuanadd');
+
 Route::get('/pengantarmahasiswa', [MahasiswaController::class, 'pengantar'])->name('pengantarMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 Route::get('/laporlistmahasiswa', [MahasiswaController::class, 'laporanList'])->name('laporListMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 Route::get('/laporformmahasiswa', [MahasiswaController::class, 'laporanForm'])->name('laporFormMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);

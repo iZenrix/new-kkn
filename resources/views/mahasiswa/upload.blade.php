@@ -3,14 +3,16 @@
 @section('content')
     <h2 class="mb-4">Form Pengajuan KKN</h2>
 
-    <form role="form" action="todo.store" method="post">
+    <form action="{{route('pengajuanadd')}}" method="post">
+
+        @csrf
         <div class="form-group">
-            <label>Nama Ketua</label>
-            <input type="text" name="judul_bk" class="form-control">
+            <label>Nama Tempat</label>
+            <input type="text" name="nama_tempat" class="form-control">
         </div>
         <div class="form-group">
-            <label>Lokasi</label>
-            <input type="text" name="penulis_bk" class="form-control">
+            <label>Job</label>
+            <input type="text" name="job" class="form-control">
         </div>
         <div class="form-group">
             <label>Proposal</label>
