@@ -77,3 +77,13 @@ Route::get('/f', function () {
 Route::get('/x', function () {
     return view('login.login');
 });
+
+
+Route::get('/y', function () {
+    return view('login.daftarDosen');
+});
+
+
+Route::get('/z', function () {
+    return view('login.tes');
+});
