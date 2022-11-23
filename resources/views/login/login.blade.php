@@ -15,6 +15,7 @@
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="{{route('actionRegister')}}" method="post">
+            @csrf
                 <h1>Create Account</h1>
                 <input type="text" placeholder="NRP" name="nrp" />
                 <input type="text" placeholder="Name" name="nama" />
