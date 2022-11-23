@@ -37,28 +37,34 @@
                 <h1><a href="index.html" class="logo">KKN KUY</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="p">Dashboard</a>
+                        <a href="{{route('dashboardMahasiswa')}}">Dashboard</a>
                     </li>
                     <li>
-                        <a href="q">Pengajuan KKN</a>
+                        <a href="{{route('uploadMahasiswa')}}">Pengajuan KKN</a>
                     </li>
                     <li>
-                        <a href="r">Pengantar Dosen</a>
+                        <a href="{{route('pengantarMahasiswa')}}">Pengantar Dosen</a>
                     </li>
                     <li>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
                             class="dropdown-toggle">Laporan Mingguan</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="s">List</a>
+                                <a href="{{route('laporListMahasiswa')}}">List</a>
                             </li>
                             <li>
-                                <a href="t">Form</a>
+                                <a href="{{route('laporFormMahasiswa')}}">Form</a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="u">Contact</a>
+                    </li>
+                    <li>
+                        <a href="{{route('logout')}}"  onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> {{ __('Logout') }}</a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
                     </li>
                 </ul>
 
