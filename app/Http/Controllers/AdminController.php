@@ -21,13 +21,13 @@ class AdminController extends Controller
     public function actived($id){
         User:: where('id', $id) 
         ->update(['status'=> 1]);
-        return redirect()->route('dashboardAdmin');
+        return redirect()->route('dashboardadmin');
     }
 
     public function delete($id){
         $data_mahasiswa = User::find($id);
         $data_mahasiswa->delete();
-        return redirect()->route('dashboardAdmin');
+        return redirect()->route('dashboardadmin');
     }
 
     public function datamahasiswa(){
@@ -42,6 +42,10 @@ class AdminController extends Controller
     public function datauser(){
         $user = User::where('status', '=', '1')->OrderBy('role')->OrderBy('id','asc')->paginate(5);
         return view('admin.user.datauser', compact('user'));
+    }
+
+    public function tambahdosen(){
+        return view('admin.dosen.tambahdosen');
     }
 
 }

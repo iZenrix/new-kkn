@@ -24,9 +24,9 @@ class LoginController extends Controller
         ];
         if (Auth::Attempt($data)) {
             if($request->user()->role == 'mahasiswa' && $request->user()->status == '0'){
-                return view('login.login');
+                return redirect()->route('halamanlogin')->with('fail', 'Akun belum aktif Harap hubungi Admin');
             }else if($request->user()->role == 'admin' && $request->user()->status == '1'){
-                    return redirect()->route('dashboardAdmin');
+                    return redirect()->route('dashboardadmin');
             }else if($request->user()->role == 'mahasiswa' && $request->user()->status == '1'){
                     return redirect()->route('dashboardMahasiswa');
             }else if($request->user()->role == 'dosen' && $request->user()->status == '1'){
@@ -37,7 +37,7 @@ class LoginController extends Controller
                 return view('login.login');
             }
         }else{
-            return redirect('/login');
+            return  redirect()->route('halamanlogin')->with('fail', 'Email atau Password anda salah');
         }
     }
 
