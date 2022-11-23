@@ -35,6 +35,7 @@
             </div>
             <div class="p-4">
                 <h1><a href="index.html" class="logo">KKN KUY</a></h1>
+                <h2><a href="/dashboarddosen" class="logo">ADMIN</a></h2>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="dashboardadmin">Dashboard</a>

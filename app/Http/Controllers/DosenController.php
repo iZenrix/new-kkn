@@ -10,19 +10,14 @@ class DosenController extends Controller
     public function dashboard(){
         return view('dosen.dashboard');
     }
-    public function upload(){
-        return view('dosen.upload');
+    public function listPengajuan(){
+        return view('dosen.listPengajuan');
     }
-    public function pengantar(){
-        return view('dosen.pengantar');
+    public function pengantarDosen(){
+        return view('dosen.pengantarDosen');
     }
     public function laporanList(){
-        return view('dosen.pengantar.list');
+        return view('dosen.laporan.list');
     }
-    public function laporanform(){
-        return view('dosen.laporan.form');
-    }
-    public function contact(){
-        return view('dosen.contact');
-    }
+
 }

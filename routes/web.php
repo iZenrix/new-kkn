@@ -37,8 +37,9 @@ Route::get('/tambahdosen', [AdminController::class, 'tambahdosen']);
 Route::get('/tes', [TesController::class, 'index'])->name('index')->middleware(['auth', 'role:admin', 'status:1']);
 Route::get('/dashboardmahasiswa', [MahasiswaController::class, 'dashboard'])->name('dashboardMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 
-Route::get('/addpengajuan', [MahasiswaController::class, 'upload'])->name('uploadMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
-Route::post('addpengajuan/action', [PengajuanController::class, 'store'])->name('pengajuanadd');
+Route::get('/listpengajuan', [MahasiswaController::class, 'listPengajuan'])->name('listPengajuan')->middleware(['auth', 'role:mahasiswa', 'status:1']);
+Route::get('/addpengajuan', [MahasiswaController::class, 'addPengajuan'])->name('addPengajuan')->middleware(['auth', 'role:mahasiswa', 'status:1']);
+Route::post('addpengajuan/action', [PengajuanController::class, 'store'])->name('pengajuanAdd');
 
 Route::get('/pengantarmahasiswa', [MahasiswaController::class, 'pengantar'])->name('pengantarMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 Route::get('/laporlistmahasiswa', [MahasiswaController::class, 'laporanList'])->name('laporListMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
@@ -48,12 +49,10 @@ Route::get('/contactmahasiswa', [MahasiswaController::class, 'contact'])->name('
 
 // dosen
 
-Route::get('/a', [DosenController::class, 'dashboard'])->name('dashboardDosen')->middleware(['auth', 'role:dosen', 'status:1']);
-Route::get('/b', [DosenController::class, 'upload'])->name('uploadDosen')->middleware(['auth', 'role:dosen', 'status:1']);
-Route::get('/c', [DosenController::class, 'pengantar'])->name('pengantarDosen')->middleware(['auth', 'role:dosen', 'status:1']);
-Route::get('/d', [DosenController::class, 'laporanList'])->name('laporanlistDosen')->middleware(['auth', 'role:dosen', 'status:1']);
-Route::get('/e', [DosenController::class, 'laporanform'])->name('laporanformDosen')->middleware(['auth', 'role:dosen', 'status:1']);
-Route::get('/f', [DosenController::class, 'contact'])->name('contactDosen')->middleware(['auth', 'role:dosen', 'status:1']);
+Route::get('/dashboarddosen', [DosenController::class, 'dashboard'])->name('dashboardDosen')->middleware(['auth', 'role:dosen', 'status:1']);
+Route::get('/listpengajuankkn', [DosenController::class, 'listPengajuankkn'])->name('listPengajuankkn')->middleware(['auth', 'role:dosen', 'status:1']);
+Route::get('/pengantardosen', [DosenController::class, 'pengantarDosen'])->name('pengantarDosen')->middleware(['auth', 'role:dosen', 'status:1']);
+Route::get('/laporanList', [DosenController::class, 'laporanList'])->name('laporanlistDosen')->middleware(['auth', 'role:dosen', 'status:1']);
 
 // Login
 

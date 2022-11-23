@@ -11,8 +11,11 @@ class MahasiswaController extends Controller
         return view('mahasiswa.dashboard');
     }
 
-    public function upload(){
-        return view('mahasiswa.upload');
+    public function listPengajuan(){
+        return view('mahasiswa.upload.list');
+    }
+    public function addPengajuan(){
+        return view('mahasiswa.upload.upload');
     }
 
     public function pengantar(){

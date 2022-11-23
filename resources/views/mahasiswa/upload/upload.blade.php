@@ -3,7 +3,7 @@
 @section('content')
     <h2 class="mb-4">Form Pengajuan KKN</h2>
 
-    <form action="{{route('pengajuanadd')}}" method="post">
+    <form action="{{route('pengajuanAdd')}}" method="post">
 
         @csrf
         <div class="form-group">
