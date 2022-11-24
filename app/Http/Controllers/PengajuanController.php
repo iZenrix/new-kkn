@@ -48,8 +48,9 @@ class PengajuanController extends Controller
         $proposal->file_proposal = $test->getFilename();
         $proposal->save();
         
+        // $pengajuan_kkns = collect(DB::SELECT("SELECT count(id) as jumlah from pengajuan_kkns"))->where('id_user', '=', '$id_user')->first();
 
-        return redirect()->route('uploadMahasiswa')->with('message', 'Pengajuan created!');;
+        return redirect()->route('listPengajuan')->with('message', 'Pengajuan created!');
     }
 
     /**

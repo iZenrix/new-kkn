@@ -26,46 +26,18 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                        @foreach($pengajuan_kkn as $proposal)
                             <tr>
-                                <td>
-                                    01
-                                </td>
-                                <td>
-                                    Dau, Malang
-                                </td>
-                                <td>
-                                    Memasang Baliho, Mendaki Pohon
-                                </td>
-                                <td>
-                                    proposal1.pdf
-                                </td>
-                                <td>
-                                    REJECTED
-                                </td>
+                                <td>{{$proposal->id_user}}</td>
+                                <td>{{$proposal->nama_tempat}}</td>
+                                <td>{{$proposal->job}}</td>
+                                <td>{{$proposal->file_proposal}}</td>
+                                <?php if($proposal->status == 0){
+                                    $proposal->status = 'NON ACTIVE';
+                                }?>
+                                <td>{{$proposal->status}}</td>
                             </tr>
-
-                        </tbody>
-                        <tbody>
-
-                            <tr>
-                                <td>
-                                    02
-                                </td>
-                                <td>
-                                    Kejawan Gebang, Sby
-                                </td>
-                                <td>
-                                    Bersih Desa, Membantu Atok
-                                </td>
-                                <td>
-                                    proposal2.pdf
-                                </td>
-                                <td>
-                                    APPROVED
-                                </td>
-                            </tr>
-
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

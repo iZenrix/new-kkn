@@ -39,7 +39,7 @@ Route::get('/dashboardmahasiswa', [MahasiswaController::class, 'dashboard'])->na
 
 Route::get('/listpengajuan', [MahasiswaController::class, 'listPengajuan'])->name('listPengajuan')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 Route::get('/addpengajuan', [MahasiswaController::class, 'addPengajuan'])->name('addPengajuan')->middleware(['auth', 'role:mahasiswa', 'status:1']);
-Route::post('addpengajuan/action', [PengajuanController::class, 'store'])->name('pengajuanAdd');
+Route::post('addpengajuan/action', [PengajuanController::class, 'store'])->name('pengajuanadd');
 
 Route::get('/pengantarmahasiswa', [MahasiswaController::class, 'pengantar'])->name('pengantarMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 Route::get('/laporlistmahasiswa', [MahasiswaController::class, 'laporanList'])->name('laporListMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
