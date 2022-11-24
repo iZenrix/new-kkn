@@ -6,27 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manajemen KKN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/style.css">
 </head>
+<?php echo csrf_field(); ?>
 
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>Create Account</h1>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button>Sign Up</button>
+            <form action="<?php echo e(route('actionRegister')); ?>" method="post">
+                <?php echo csrf_field(); ?>
+                <h1>Sign Up</h1>
+                <input type="text" placeholder="NRP" name="nrp" />
+                <input type="text" placeholder="Name" name="nama" />
+                <input type="hidden" placeholder="role" name="role" value="mahasiswa" />
+                <input type="text" placeholder="Jurusan" name="jurusan" />
+                <input type="text" placeholder="Kelas" name="kelas" />
+                <input type="email" placeholder="Email" name="email" />
+                <input type="password" placeholder="Password" name="password" />
+                <input type="hidden" placeholder="status" name="status" value="0" />
+                <button type="submit">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="<?php echo e(route('postLogin')); ?>" method="post">
+                <?php echo csrf_field(); ?>
                 <h1>Sign in</h1>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input type="email" placeholder="Email" name="email" />
+                <input type="password" placeholder="Password" name="password" />
+                <?php if(session('fail')): ?>
+                    <p class="text-danger" role="alert">
+                        <?php echo e(session('fail')); ?>
+
+                    </p>
+                <?php endif; ?>
                 <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <button type="submit">Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
