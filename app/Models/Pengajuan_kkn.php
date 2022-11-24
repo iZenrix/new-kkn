@@ -9,6 +9,12 @@ class Pengajuan_kkn extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama_tempat', 'job', 'user_id'];
+    protected $fillable = [
+        'id_user',
+        'nama_tempat',
+        'file_proposal',
+        'status',
+        'job'
+    ];
 
 }

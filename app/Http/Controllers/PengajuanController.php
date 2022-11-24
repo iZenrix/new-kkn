@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Pengajuan_kkn;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Validation\Rules\File;
 class PengajuanController extends Controller
 {
     /**
@@ -38,18 +38,19 @@ class PengajuanController extends Controller
      */
     public function store(Request $request)
     {
-        $nama_tempat = $request->input('nama_tempat');
-        $job = $request->input('job');
-        $user_id = $request->input('todo');
+        $proposal = new pengajuan_kkn();
+        $proposal->id_user=$request->id_user;
+        $proposal->nama_tempat=$request->nama_tempat;
+        $proposal->status=$request->status;
+        $proposal->job=$request->job;
+        $file_proposal = $request->file('file_proposal');        
+        $test = $file_proposal->move(public_path('pengumpulan_proposal'),$file_proposal->getClientOriginalName());
+        $proposal->file_proposal = $test->getFilename();
+        $proposal->save();
+        
+        // $pengajuan_kkns = collect(DB::SELECT("SELECT count(id) as jumlah from pengajuan_kkns"))->where('id_user', '=', '$id_user')->first();
 
-        DB::table('pengajuan_kkns')
-            ->insert([
-                'nama_tempat' => $nama_tempat,
-                'job' => $job,  
-                'user_id' => auth()->id()             
-            ]);
-
-        return redirect()->route('uploadMahasiswa')->with('message', 'Pengajuan created!');;
+        return redirect()->route('listPengajuan')->with('message', 'Pengajuan created!');
     }
 
     /**

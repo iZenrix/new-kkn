@@ -25,6 +25,7 @@ class AdminController extends Controller
     }
 
     public function delete($id){
+        
         $data_mahasiswa = User::find($id);
         $data_mahasiswa->delete();
         return redirect()->route('dashboardadmin');
