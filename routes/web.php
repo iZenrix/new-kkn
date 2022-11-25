@@ -63,3 +63,12 @@ Route::post('regis/action', [RegisController::class, 'actionRegister'])->name('a
 
 //Logout
 Route::post('logout', [LoginController::class, 'actionLogout'])->name('logout')->middleware(['auth']);
+
+
+Route::get('/addDosen', function () {
+    return view('admin.dosen.tambahdosen');
+});
+
+Route::get('/dashboard', function () {
+    return view('landingPage.index');
+});

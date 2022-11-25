@@ -10,13 +10,28 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/style.css">
 </head>
-<?php echo csrf_field(); ?>
+@csrf
 
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="<?php echo e(route('actionRegister')); ?>" method="post">
-                <?php echo csrf_field(); ?>
+            <form action="#" method="post">
+                @csrf
+                <h1>Sign Up</h1>
+                <input type="text" placeholder="NIDN" name="nrp" />
+                <input type="text" placeholder="Name" name="nama" />
+                <input type="hidden" placeholder="role" name="role" value="mahasiswa" />
+                <input type="text" placeholder="Jurusan" name="jurusan" />
+                <input type="text" placeholder="Kelas" name="kelas" />
+                <input type="email" placeholder="Email" name="email" />
+                <input type="password" placeholder="Password" name="password" />
+                <input type="hidden" placeholder="status" name="status" value="1" />
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#" method="post">
+                @csrf
                 <h1>Sign Up</h1>
                 <input type="text" placeholder="NRP" name="nrp" />
                 <input type="text" placeholder="Name" name="nama" />
@@ -29,33 +44,12 @@
                 <button type="submit">Sign Up</button>
             </form>
         </div>
-        <div class="form-container sign-in-container">
-            <form action="<?php echo e(route('postLogin')); ?>" method="post">
-                <?php echo csrf_field(); ?>
-                <h1>Sign in</h1>
-                <input type="email" placeholder="Email" name="email" />
-                <input type="password" placeholder="Password" name="password" />
-                <?php if(session('fail')): ?>
-                    <p class="text-danger" role="alert">
-                        <?php echo e(session('fail')); ?>
-
-                    </p>
-                <?php endif; ?>
-                <a href="#">Forgot your password?</a>
-                <button type="submit">Sign In</button>
-            </form>
-        </div>
         <div class="overlay-container">
             <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
-                </div>
                 <div class="overlay-panel overlay-right">
-                    <h1>Don't have account yet?</h1>
-                    <p>Enter your personal details and start journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
+                    <h1>Tambah Dosen</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus molestias obcaecati quod
+                        quaerat!</p>
                 </div>
             </div>
         </div>
@@ -64,4 +58,3 @@
 </body>
 
 </html>
-<?php /**PATH F:\laravel\kkn\resources\views/login/login.blade.php ENDPATH**/ ?>
