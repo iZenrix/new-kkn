@@ -10,7 +10,15 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                <button type="submit" class="btn btn-info">Tambah</button>
+                <a href="tambahdosen">
+                    <button type="submit" class="btn btn-primary btn-sm" style="align-self: baseline">Tambah</button>
+                </a>
+                @if(session('success'))
+                    <p class="text-success" role="success" >
+                            {{ session('success') }}
+                    </p>
+                @endif
+                <h2 class="mb-4">Daftar Dosen</h2>
                     <table class="table table-hover table-bordered table-stripped" id="example2">
                         <thead>
                         <tr>

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pengajuan_kkn;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+
 
 class AdminController extends Controller
 {
@@ -45,8 +48,22 @@ class AdminController extends Controller
         return view('admin.user.datauser', compact('user'));
     }
 
-    public function tambahdosen(){
-        return view('admin.dosen.tambahdosen');
+    public function tambahdosen(request $request){
+        $dosen = User::create([
+            'nrp' => $request->nrp,
+            'nama' => $request->nama,
+            'role' => $request->role,
+            'jurusan' => $request->jurusan,
+            'kelas' => $request->kelas,
+            'email' => $request->email,
+            'password' => hash::make($request->password),
+            'status' => $request->status
+        ]);
+        return redirect()->route('datadosen')->with('success', 'Akun dosen telah terdaftar dan aktif');
+    }
+
+    public function pagedosen(){
+        return view('login.daftarDosen');
     }
 
 }

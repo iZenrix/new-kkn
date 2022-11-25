@@ -26,15 +26,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                            $no = 1;
+                                ?>
                         @foreach($pengajuan_kkn as $proposal)
                             <tr>
-                                <td>{{$proposal->id_user}}</td>
+                                <td>{{$no++}}</td>
                                 <td>{{$proposal->nama_tempat}}</td>
                                 <td>{{$proposal->job}}</td>
                                 <td>{{$proposal->file_proposal}}</td>
-                                <?php if($proposal->status == 0){
-                                    $proposal->status = 'NON ACTIVE';
-                                }?>
+                                <?php if($proposal->status == '0'){
+                                    $proposal->status = 'PENDING';
+                                }elseif ($proposal->status == '1') {
+                                    $proposal->status = 'APPROVED';
+                                }else {
+                                    $proposal->status = 'REJECTED';
+                                }
+                                ?>  
                                 <td>{{$proposal->status}}</td>
                             </tr>
                         @endforeach

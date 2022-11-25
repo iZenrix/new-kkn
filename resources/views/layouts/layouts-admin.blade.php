@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     @stack('css')
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
@@ -35,7 +35,7 @@
             </div>
             <div class="p-4">
                 <h1><a href="index.html" class="logo">KKN KUY</a></h1>
-                <h2><a href="/dashboarddosen" class="logo">ADMIN</a></h2>
+                <h2><a href="/dashboardadmin" class="logo">ADMIN</a></h2>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="dashboardadmin">Dashboard</a>

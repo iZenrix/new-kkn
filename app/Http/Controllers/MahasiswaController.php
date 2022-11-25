@@ -14,7 +14,7 @@ class MahasiswaController extends Controller
     }
 
     public function listPengajuan(){
-        $pengajuan_kkn = Pengajuan_kkn::where('id_user', '=', '11')->where('status', '=', '0')->paginate(5);
+        $pengajuan_kkn = Pengajuan_kkn::where('id_user', '=', '11')->paginate(5);
         // $pengajuan_kkn = collect(DB::SELECT("SELECT count(id) as jumlah from pengajuan_kkns"))->where('id_user', '=', '$id_user')->first();
         return view('mahasiswa.upload.list', compact('pengajuan_kkn'));
     }

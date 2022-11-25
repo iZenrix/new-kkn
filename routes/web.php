@@ -30,7 +30,8 @@ Route::post('/dashboardadmin/delete/{id}', [AdminController::class, 'delete'])->
 Route::get('/datamahasiswa', [AdminController::class, 'datamahasiswa'])->name('datamahasiswa')->middleware(['auth', 'role:admin', 'status:1']);
 Route::get('/datadosen', [AdminController::class, 'datadosen'])->name('datadosen')->middleware(['auth', 'role:admin', 'status:1']);
 Route::get('/datauser', [AdminController::class, 'datauser'])->name('datauser')->middleware(['auth', 'role:admin', 'status:1']);
-Route::get('/tambahdosen', [AdminController::class, 'tambahdosen']);
+Route::get('/tambahdosen', [AdminController::class, 'pagedosen'])->name('pagetambahdosen')->middleware(['auth', 'role:admin', 'status:1']);
+Route::post('/tambahdosen/signin/', [AdminController::class, 'tambahdosen'])->name('tambahdosen')->middleware(['auth', 'role:admin', 'status:1']);
 
 //mahasiswa
 
