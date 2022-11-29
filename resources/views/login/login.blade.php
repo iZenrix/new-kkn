@@ -8,7 +8,7 @@
     <title>Manajemen KKN</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/login/style.css">
 </head>
 @csrf
 
@@ -18,14 +18,14 @@
             <form action="{{ route('actionRegister') }}" method="post">
                 @csrf
                 <h1>Sign Up</h1>
-                <input type="text" placeholder="NRP" name="nrp" />
-                <input type="text" placeholder="Name" name="nama" />
-                <input type="hidden" placeholder="role" name="role" value="mahasiswa" />
-                <input type="text" placeholder="Jurusan" name="jurusan" />
-                <input type="text" placeholder="Kelas" name="kelas" />
-                <input type="email" placeholder="Email" name="email" />
-                <input type="password" placeholder="Password" name="password" />
-                <input type="hidden" placeholder="status" name="status" value="0" />
+                <input type="text" placeholder="NRP" name="nrp" required/>
+                <input type="text" placeholder="Name" name="nama" required/>
+                <input type="hidden" placeholder="role" name="role" value="mahasiswa"/>
+                <input type="text" placeholder="Jurusan" name="jurusan" required/>
+                <input type="text" placeholder="Kelas" name="kelas" required/>
+                <input type="email" placeholder="Email" name="email" required/>
+                <input type="password" placeholder="Password" name="password" required/>
+                <input type="hidden" placeholder="status" name="status" value="0"/>
                 <button type="submit">Sign Up</button>
             </form>
         </div>
@@ -33,8 +33,8 @@
             <form action="{{ route('postLogin') }}" method="post">
                 @csrf
                 <h1>Sign in</h1>
-                <input type="email" placeholder="Email" name="email" />
-                <input type="password" placeholder="Password" name="password" />
+                <input type="email" placeholder="Email" name="email" required/>
+                <input type="password" placeholder="Password" name="password" required/>
                 @if (session('fail'))
                     <p class="text-danger" role="alert">
                         {{ session('fail') }}
@@ -59,7 +59,7 @@
             </div>
         </div>
     </div>
-    <script src="/assets/main.js"></script>
+    <script src="/assets/login/main.js"></script>
 </body>
 
 </html>
