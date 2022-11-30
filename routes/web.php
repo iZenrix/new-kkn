@@ -8,7 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PengajuanController;
-
+use App\Http\Controllers\MonitoringController;  
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,14 +37,16 @@ Route::post('/tambahdosen/signin/', [AdminController::class, 'tambahdosen'])->na
 
 Route::get('/tes', [TesController::class, 'index'])->name('index')->middleware(['auth', 'role:admin', 'status:1']);
 Route::get('/dashboardmahasiswa', [MahasiswaController::class, 'dashboard'])->name('dashboardMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
-
 Route::get('/listpengajuan', [MahasiswaController::class, 'listPengajuan'])->name('listPengajuan')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 Route::get('/addpengajuan', [MahasiswaController::class, 'addPengajuan'])->name('addPengajuan')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 Route::post('addpengajuan/action', [PengajuanController::class, 'store'])->name('pengajuanadd');
-
 Route::get('/pengantarmahasiswa', [MahasiswaController::class, 'pengantar'])->name('pengantarMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 Route::get('/laporlistmahasiswa', [MahasiswaController::class, 'laporanList'])->name('laporListMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
+Route::post('/laporlistmahasiswa/delete/{id}', [MahasiswaController::class, 'Delete'])->name('deletelist')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 Route::get('/laporformmahasiswa', [MahasiswaController::class, 'laporanForm'])->name('laporFormMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
+Route::post('laporanform/action', [MonitoringController::class, 'store'])->name('laporanform')->middleware(['auth', 'role:mahasiswa', 'status:1']);
+Route::get('laporanform/edit/{id}', [MonitoringController::class, 'Edit'])->name('editlaporan')->middleware(['auth', 'role:mahasiswa', 'status:1']);
+Route::post('laporanform/edit/{id}', [MonitoringController::class, 'updateProposal'])->name('updatelaporan')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 Route::get('/contactmahasiswa', [MahasiswaController::class, 'contact'])->name('contactMahasiswa')->middleware(['auth', 'role:mahasiswa', 'status:1']);
 
 
@@ -69,6 +71,6 @@ Route::get('/addDosen', function () {
     return view('admin.dosen.tambahdosen');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/kknkuy', function () {
     return view('landingPage.index');
 });

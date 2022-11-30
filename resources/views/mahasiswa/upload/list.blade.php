@@ -35,15 +35,19 @@
                                 <td>{{$proposal->nama_tempat}}</td>
                                 <td>{{$proposal->job}}</td>
                                 <td>{{$proposal->file_proposal}}</td>
-                                <?php if($proposal->status == '0'){
-                                    $proposal->status = 'PENDING';
-                                }elseif ($proposal->status == '1') {
-                                    $proposal->status = 'APPROVED';
-                                }else {
-                                    $proposal->status = 'REJECTED';
-                                }
-                                ?>  
-                                <td>{{$proposal->status}}</td>
+                                @if ($proposal->status == 0)
+                                    <td class="text-primary">
+                                        PENDING
+                                    </td>
+                                @elseif($proposal->status == 1)
+                                <td class="text-success">
+                                    APRROVED
+                                </td>
+                                @else
+                                    <td class="text-danger">
+                                        REJECTED
+                                    </td>
+                                @endif
                             </tr>
                         @endforeach
                         </tbody>
