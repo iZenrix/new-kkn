@@ -55,7 +55,7 @@
                     <li>
                         <a href="{{route('datamahasiswa')}}"><i class="fa fa-user"></i> Data Mahasiswca</a>
                     <li>
-                        <a href="u">Contact</a>
+                        <a href="u"><i class="fa fa-phone"></i> Contact</a>
                     </li>
                     <li>
                         <a href="{{route('logout')}}"  onclick="event.preventDefault();
