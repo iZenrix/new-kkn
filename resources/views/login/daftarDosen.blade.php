@@ -31,8 +31,7 @@
             <div class="overlay">
                 <div class="overlay-panel overlay-right">
                     <h1>Tambah Dosen</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus molestias obcaecati quod
-                        quaerat!</p>
+                    <p>Ini Form Tambah Dosen.</p>
                 </div>
             </div>
         </div>

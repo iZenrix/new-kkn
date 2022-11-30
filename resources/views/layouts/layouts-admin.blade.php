@@ -49,9 +49,6 @@
                     <li>
                         <a href="{{route('datamahasiswa')}}">Data Mahasiswa</a>
                     <li>
-                        <a href="u">Contact</a>
-                    </li>
-                    <li>
                         <a href="{{route('logout')}}"  onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> {{ __('Logout') }}</a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
