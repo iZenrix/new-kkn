@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KKN</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/AdminLTE.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -35,27 +36,31 @@
                     <span class="sr-only">Toggle Menu</span>
                 </button>
             </div>
-            <div class="p-4">
-                <h1><a href="index.html" class="logo">KKN KUY</a></h1>
-                <ul class="list-unstyled components mb-5">
+            <div class="p-3">
+                <ul class="sidebar-menu">
+                    <li style='color:#fff; border-bottom:2px solid #00c0ef'>
+                        <p>SELAMAT DATANG,<p>
+                        <p style="font-size:14px">{{Auth::user()->nama}} (Siswa)</p>
+                    </li>
+
                     <li class="active">
-                        <a href="{{route('dashboardMahasiswa')}}">Dashboard</a>
+                        <a href="{{route('dashboardMahasiswa')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="{{route('listPengajuan')}}">Pengajuan KKN</a>
+                        <a href="{{route('listPengajuan')}}"><i class="fa fa-file"></i> Pengajuan KKN</a>
                     </li>
                     <li>
-                        <a href="{{route('pengantarMahasiswa')}}">Pengantar Dosen</a>
+                        <a href="{{route('pengantarMahasiswa')}}"><i class="fa fa-file-text"></i> Pengantar Dosen</a>
                     </li>
                     <li>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Laporan Mingguan</a>
+                            class="dropdown-toggle"><i class="fa fa-check-square"></i> Laporan Mingguan</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="{{route('laporListMahasiswa')}}">List</a>
+                                <a href="{{route('laporListMahasiswa')}}"><i class="fa fa-circle-o"></i> List</a>
                             </li>
                             <li>
-                                <a href="{{route('laporFormMahasiswa')}}">Form</a>
+                                <a href="{{route('laporFormMahasiswa')}}"><i class="fa fa-circle-o"></i> Form</a>
                             </li>
                         </ul>
                     </li>
