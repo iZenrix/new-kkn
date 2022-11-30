@@ -1,43 +1,53 @@
 @extends('layouts.layouts-dosen')
 
 @section('content')
+    @if(session('success'))
+                    <p class="text-success" role="success" >
+                            {{ session('success') }}
+                    </p>
+    @elseif(session('danger'))
+                    <p class="text-danger" role="danger" >
+                            {{ session('danger') }}
+                    </p>
+    @endif
     <h2 class="mb-4">Form Pengajuan KKN</h2>
-
     <table class="table table-striped table-hover dtabel">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Nama Ketua</th>
+                <th>Ketua Kelompok</th>
                 <th>Lokasi</th>
-                <th>Minggu</th>
-                <th>File</th>
+                <th>Proposal</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
+        <?php 
+                            $no = 1;
+                            ?>
+                        @foreach($pengajuan_kkn as $proposal)
+                            <tr>
+                                <td>{{$no++}}</td>
+                                <td>{{$proposal->getDataNamaKetua->nama}}</td>
+                                <td>{{$proposal->nama_tempat}}</td>
+                                <td>{{$proposal->file_proposal}}</td>
 
-            <tr>
-                <td>
-                    01
-                </td>
-                <td>
-                    Supri
-                </td>
-                <td>
-                    Malang
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    <a href="#" class="btn btn-info" role="button">Download</a>
-                </td>
-                <td>
-                    <a href="editform.php" class="btn btn-success" role="button">Validasi</a>
-                    <a href="delete.php" class="btn btn-danger" role="button">Tolak</a>
-                </td>
-            </tr>
+                                <td>
+                                <form action="{{route('approvestatus', $proposal->id)}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-success">Approve</button>
+                                </form>
+                                </td>
+                                
+                                <td>
+                                <form action="{{route('rejectstatus', $proposal->id)}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Reject</button>
+                                </form>
+                                </td>
 
-        </tbody>
+                            </tr>
+                        @endforeach
+                        </tbody>
     </table>
 @endsection

@@ -68,7 +68,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Login</a>
+                                    <a class="nav-link" href="login">Login</a>
                                 </li>
 
                             </ul>
@@ -83,9 +83,7 @@
                         Ayo Ngab Kita KKN!
                     </h1>
                     <p>
-                        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore
-                        magna aliqua. Ut enim ad minim veniam
+                    Sistem Management KKN Universitas Jaya Jaya Jaya.
                     </p>
                     <div class="hero_btn-continer">
                         <a href="" class="call_to-btn btn_white-border">

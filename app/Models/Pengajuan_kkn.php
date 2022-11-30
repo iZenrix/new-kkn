@@ -17,4 +17,7 @@ class Pengajuan_kkn extends Model
         'job'
     ];
 
+    public function getDataNamaKetua(){
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }

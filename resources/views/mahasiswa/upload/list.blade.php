@@ -19,7 +19,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Tempat</th>
+                                <th>Lokasi</th>
                                 <th>Job</th>
                                 <th>Proposal</th>
                                 <th>Status</th>

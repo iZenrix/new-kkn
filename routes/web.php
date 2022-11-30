@@ -23,6 +23,7 @@ use App\Http\Controllers\MonitoringController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 //admin
 Route::get('/dashboardadmin', [AdminController::class, 'dashboard'])->name('dashboardadmin')->middleware(['auth', 'role:admin', 'status:1']);
 Route::post('/dashboardadmin/{id}', [AdminController::class, 'actived'])->name('editstatus')->middleware(['auth', 'role:admin', 'status:1']);
@@ -54,8 +55,11 @@ Route::get('/contactmahasiswa', [MahasiswaController::class, 'contact'])->name('
 
 Route::get('/dashboarddosen', [DosenController::class, 'dashboard'])->name('dashboardDosen')->middleware(['auth', 'role:dosen', 'status:1']);
 Route::get('/listpengajuankkn', [DosenController::class, 'listPengajuankkn'])->name('listPengajuankkn')->middleware(['auth', 'role:dosen', 'status:1']);
-Route::get('/pengantardosen', [DosenController::class, 'pengantarDosen'])->name('pengantarDosen')->middleware(['auth', 'role:dosen', 'status:1']);
 Route::get('/laporanList', [DosenController::class, 'laporanList'])->name('laporanlistDosen')->middleware(['auth', 'role:dosen', 'status:1']);
+Route::post('/laporanList/{id}', [DosenController::class, 'approved'])->name('approvestatus')->middleware(['auth', 'role:dosen', 'status:1']);
+Route::post('/laporanList/reject/{id}', [DosenController::class, 'rejected'])->name('rejectstatus')->middleware(['auth', 'role:dosen', 'status:1']);
+Route::get('/pengantardosen', [DosenController::class, 'pengantarDosen'])->name('pengantarDosen')->middleware(['auth', 'role:dosen', 'status:1']);
+Route::post('/pengantardosen/upload/proses/{id}', [DosenController::class, 'uploadPengantar'])->name('uploadPengantar')->middleware(['auth', 'role:dosen', 'status:1']);
 
 // Login
 

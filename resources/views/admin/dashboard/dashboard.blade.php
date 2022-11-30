@@ -33,17 +33,20 @@
                                 }?>
                                 <td>{{$user->role}}</td>
                                 <td>{{$user->status}}</td>     
+                                
                                 <td>
                                 <form action="{{route('editstatus', $user->id)}}" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-primary">Aktifkan</button>
                                 </form>
                                 </td>
-                                <td><form action="{{route('delete', $user->id)}}" method="post">
+                                
+                                <td>
+                                <form action="{{route('delete', $user->id)}}" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Hapus</button>
                                 </form>
-                            </td>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

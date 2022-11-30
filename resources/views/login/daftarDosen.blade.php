@@ -1,43 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.layouts-admin')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manajemen KKN</title>
-    <link rel="stylesheet" href="/assets/style.css">
-</head>
+@section('content')
+    <h2 class="mb-4">Tambah Dosen</h2>
 
-<body>
-    <div class="container" id="container">
-        <div class="form-container sign-in-container">
-            <form action="{{route('tambahdosen')}}" method="post">
-                @csrf
-                <h1>Create Account</h1>
-                <input type="text" placeholder="NIP" name="nrp" />
-                <input type="text" placeholder="Name" name="nama" />
-                <input type="hidden" placeholder="role" name="role" value="dosen" />
-                <input type="text" placeholder="Jurusan" name="jurusan" />
-                <input type="hidden" placeholder="Kelas" name="kelas" value="null" />
-                <input type="email" placeholder="Email" name="email" />
-                <input type="password" placeholder="Password" name="password" />
-                <input type="hidden" placeholder="status" name="status" value="1"/>
-                <button type="submit">Sign Up</button>
-            </form>
+    <form action="{{route('tambahdosen')}}" enctype="multipart/form-data" method="post">
+
+        @csrf
+        <div class="form-group">
+            <label>NIP</label>
+            <input type="text" placeholder="NIP" name="nrp" class="form-control" required>
         </div>
-
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-right">
-                    <h1>Tambah Dosen</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus molestias obcaecati quod
-                        quaerat!</p>
-                </div>
-            </div>
+        <div class="form-group">
+            <label>Nama</label>
+            <input type="text" placeholder="Nama" name="nama" class="form-control" required>
         </div>
-    </div>
-    <script src="/assets/main.js"></script>
-</body>
-
-</html>
+        <input type="hidden" placeholder="role" name="role" value="dosen" />
+        <div class="form-group">
+            <label>Jurusan</label>
+            <input type="text" placeholder="Jurusan" name="jurusan" class="form-control" required>
+        </div>
+        <input type="hidden" placeholder="Kelas" name="kelas" value="null" />
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="Email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="Password" name="password" class="form-control" required>
+        </div>
+        <input type="hidden" placeholder="status" name="status" value="1"/>
+        <button type="submit" class="btn btn-info btn-block">Submit</button>
+    </form>
+@endsection
